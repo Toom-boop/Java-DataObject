@@ -1,6 +1,5 @@
-package wfe.data;
-
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class DataObject {
 	
@@ -27,6 +26,22 @@ public class DataObject {
 		}
 	}
 	
+	public int size() {
+		return values.size();
+	}
+	
+	public Iterator<DataObject> iterator() {
+		return values.iterator();
+	}
+	
+	public void remove(int index) {
+		values.remove(index);
+	}
+	
+	public void clear() {
+		values.clear();
+	}
+	
 	public void put(String key, Object value) {
 		for(DataObject object : values) {
 			if(object.getKey().equals(key)) {
@@ -42,6 +57,15 @@ public class DataObject {
 			values.add(new DataObject(key, (DataObject) value));
 		}catch(ClassCastException e) {
 			values.add(new SimpleDataObject(value.toString()));
+		}
+	}
+	
+	public void remove(String key) {
+		for(int i = 0; i<values.size(); i++) {
+			if(values.get(i).getKey().equals(key)) {
+				values.remove(i);
+				return;
+			}
 		}
 	}
 	
