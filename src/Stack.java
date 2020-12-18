@@ -1,5 +1,3 @@
-package wfe.data;
-
 public class Stack<E> {
 	
 	@SuppressWarnings("hiding")
