@@ -1,5 +1,3 @@
-package wfe.data;
-
 public class DataParser {
 	
 	private static Stack<DataObject> stack;
