@@ -1,5 +1,3 @@
-package wfe.data;
-
 public class SimpleDataObject extends DataObject {
 	public String key;
 	public String value;
